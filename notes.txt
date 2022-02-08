@@ -1,0 +1,21 @@
+Notes:
+- Use things you need to solve a problem - don't worry if it's a little crude.
+- Think about what structures to use:
+    - hashtables: lookups
+    - stacks: add things until you need it all back on some condition
+    - lists: general iteration and such
+        - circular linked list(?)
+    - sets: store a thing exactly once
+        - you can store tuples - tuple order matters if storing 'pairs' of things
+    - heap: when you need to do some kind of recursive ordering to achieve a result
+        - runtime of heap is N*lg(N) -> O(N) if used properly
+- Read the question - clarify, ask for examples etc. the subarray problem was confusing
+- Are there any preoptimizations that help? For instance if dealing with some operation
+    involving an array, would sorting the array first lead to a more efficient solution?
+- If you're using while loops, make sure increment your counter!!!!
+- Don't think too much - sometimes the solution is simpler, just make sure to understand the question
+- Explain your thought process on solving a problem - even if you can't implement the exact solution, the
+     compiler is turned off anyways, so just pseudocode it
+- Greedy algorithms are probably recursive
+
+
