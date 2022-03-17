@@ -10,6 +10,10 @@ be implemented as a list or array which would guarantee
 O(1) insertion or deletion, but other operations would have
 O(N) time complexity
 
+Stores elements, and can find the smallest (min-heap) or largest (max-heap) element stored in O(1)O(1).
+Can add elements and remove the smallest (min-heap) or largest (max-heap) element in O(\log(n))O(log(n)).
+Can perform insertions and removals while always maintaining the first property.
+
 
 ## Methods required 
 ### Insertion
@@ -29,4 +33,3 @@ O(N) time complexity
 ### Heapify 
 - Heapify will be required for insertion and deletion operations to maintain
 the desired heap properties
-
