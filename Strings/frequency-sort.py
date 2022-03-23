@@ -1,6 +1,14 @@
 
+# Given a string s, sort it in decreasing order based on the frequency of the characters.
+#   The frequency of a character is the number of times it appears in the string.
+#
+# Return the sorted string. If there are multiple answers, return any of them.
+# Case sensitive
+#
+# tree -> eert or eetr
+# Aabb -> bbAa or bbaA
 
-def frequencySort(s):
+def frequency_sort(s):
     frequencies = {}
     for letter in s:
         if letter in frequencies:
@@ -17,4 +25,4 @@ def frequencySort(s):
 
 
 s = "tree"
-print(frequencySort(s))
+print(frequency_sort(s))
