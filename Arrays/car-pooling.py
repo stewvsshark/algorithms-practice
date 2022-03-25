@@ -21,7 +21,8 @@ import math
 #   1 <= capacity <= 105
 
 # Trick: for each trip add the number of people getting in at the starting point,
-#   and subtract the number of people getting out at the stopping point
+#   and subtract the number of people getting out at the stopping point. Using a separate array and its indexes
+#   to represent a unit of distance, and the value to represent the number of current riders'
 
 # This solution is generic and doesn't depend on the trips.length or the fromi toi constraints
 
