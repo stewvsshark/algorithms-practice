@@ -17,5 +17,12 @@ Notes:
 - Explain your thought process on solving a problem - even if you can't implement the exact solution, the
      compiler is turned off anyways, so just pseudocode it
 - Greedy algorithms are probably recursive
+- Think about the sub problems involved in the problem you're trying to solve - ex. the sliding window
+max/min subarray question - that can be broken into how to find a min in a sliding window and how to find
+a max in a sliding window. Solve those problems individually, and then combine them. Even just properly writing
+a loop on a sliding window is a good exercise.
+
+
+
 
 
