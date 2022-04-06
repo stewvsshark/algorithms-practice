@@ -1,3 +1,5 @@
+from collections import deque
+
 # Given an array of integers nums and an integer limit, return the size of the longest non-
 #   empty subarray such that the absolute difference between any two elements of this subarray
 #   is less than or equal to limit.
@@ -16,20 +18,19 @@
 #   The two queues help us keep track of the min and max values of a respective subarray:
 #       one queue holds the indices of min values, increasing monotonically
 #       one queue holds the indices of the max values, decreasing monotonically
+# In the beginning, we set both left pointer l and right pointer r at index 0. We keep moving r forward until
+#   the max absolute difference within the window exceeds the limit. Then, we move forward l
+#   until the max absolute difference falls back within the limit.
 #   Operations:
-#       - Pop all indices from the min queue that point to larger values than the current value (queue clean up)
-#       - Pop all indices from the max queue that point to smaller values than the current value (queue clean up)
-#       - If the current max - current min > limit:
-#           - Increment l
-#           -
-
+#       - Pop (from end) all indices from the min queue that point to larger values than the current r pointer (queue clean up)
+#       - Pop (from end) all indices from the max queue that point to smaller values than the current r pointer (queue clean up)
+#       - While the current max - current min > limit:
+#           - increment left pointer
+#           - if l pointer value > current min, pop current min
+#           - if l pointer value > current max, pop current max
 # Related problem (probably a good starter problem):
 #   Find the maximum of a given sliding window in an array
 #   Find the minimum of a given sliding window in an array
-
-
-from collections import deque
-
 
 def longest_subarray(nums, limit):
     max_subarray_length = 1
@@ -54,9 +55,9 @@ def longest_subarray_alternate(nums, limit):
     l = r = 0
     ans = 0
     while r < len(nums):
-        while min_deque and nums[min_deque[-1]] > nums[r]:
+        while min_deque and nums[r] <= nums[min_deque[-1]]:
             min_deque.pop()
-        while max_deque and nums[max_deque[-1]] < nums[r]:
+        while max_deque and nums[r] >= nums[max_deque[-1]]:
             max_deque.pop()
         min_deque.append(r)
         max_deque.append(r)
